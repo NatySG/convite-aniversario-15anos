@@ -62,13 +62,13 @@ export default function Modal({ isOpen, onClose, onSubmit }: ModalProps) {
         </ul>
 
         <p
-          className={`${montserrat.className} mt-10 text-xl md:text-lg tracking-wider text-[#4e5861]`}
+          className={`${montserrat.className} mt-10 text-lg md:text-base tracking-wider text-[#4e5861]`}
         >
           Ou se preferir, minha chave pix é:
         </p>
 
-        <div className="bg-[#676eb2] mt-2 w-50 flex justify-center items-center p-4 rounded-lg text-center">
-          <p className={`${montserrat.className} text-white`}>
+        <div className="bg-[#676eb2] mt-2 w-4/5 flex justify-center items-center p-4 rounded-lg text-center">
+          <p className={`${montserrat.className} text-white text-sm md:text-base`}>
            CPF -  175.326.926-12
           </p>
         </div>
