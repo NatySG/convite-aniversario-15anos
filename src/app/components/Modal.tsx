@@ -62,7 +62,7 @@ export default function Modal({ isOpen, onClose, onSubmit }: ModalProps) {
         </ul>
 
         <p
-          className={`${montserrat.className} mt-10 text-base md:text-base tracking-wider text-[#4e5861]`}
+          className={`${montserrat.className} mt-10 text-sm md:text-base tracking-wider text-[#4e5861] whitespace-nowrap`}
         >
           Ou se preferir, minha chave pix é:
         </p>
