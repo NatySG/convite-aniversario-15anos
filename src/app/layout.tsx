@@ -75,8 +75,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://sofiaesther15anos.netlify.app/opengraphy.png?v=3",
-        width: 1200,
-        height: 630,
+        width: 600,
+        height: 315,
         alt: "Convite Sofia Esther 15 anos",
       },
     ],
