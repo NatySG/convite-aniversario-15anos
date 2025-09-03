@@ -86,9 +86,9 @@ export default function Convite({
             <Image
               src="/azul.png"
               alt="Foto para o grande dia"
-              width={150}
-              height={150}
-              className="absolute right-[-40px] -top-5 rounded-2xl object-cover"
+              width={100}
+              height={100}
+              className="absolute right-[-30px] -top-2 rounded-2xl object-cover"
             />
           </div>
 
@@ -199,7 +199,7 @@ export default function Convite({
           </p>
 
           <p
-            className={`${montserrat.className} mt-7 tracking-wider text-[#4e5861] self-center text-2xl mx-auto`}
+            className={`${montserrat.className} mt-7 tracking-wider text-[#4e5861] self-center text-base mx-auto`}
           >
             CONVIDADO NÃO CONVIDA!
           </p>
