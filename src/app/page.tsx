@@ -9,7 +9,7 @@ export default function Page() {
         <meta name="description" content="Convite de 15 anos da Sofia Esther" />
         <meta property="og:title" content="Convite Sofia Esther" />
         <meta property="og:description" content="Você está convidado para a celebração!" />
-        <meta property="og:image" content="/opengraphy.png" />
+        <meta property="og:image" content="https://sofiaesther15anos.netlify.app/opengraphy.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://sofiaesther15anos.netlify.app/" />
       </Head>
