@@ -225,7 +225,7 @@ export default function Convite({
 
         <div className="text-center mt-20">
           <Button variant="primary" onClick={() => setIsModalOpen(true)}>
-            PARA ME PRESENTAR
+            PARA ME PRESENTEAR
           </Button>
         </div>
 
