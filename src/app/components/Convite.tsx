@@ -166,7 +166,7 @@ export default function Convite({
                 alt="Foto para o grande dia"
                 width={40}
                 height={40}
-                className="absolute right-14 -top-31 rounded-2xl object-cover"
+                className="absolute right-6 -top-31 rounded-2xl object-cover"
               />
         </div>
 
