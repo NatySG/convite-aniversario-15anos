@@ -14,6 +14,7 @@ import MiniMapa from "./MiniMapa";
 import { useState } from "react";
 import Modal from "./Modal";
 import Head from "next/head";
+import ModalWhatsapp from "./ModalWhatsapp";
 
 const allura = Allura({ subsets: ["latin"], weight: "400" });
 const playfair = Playfair_Display({ subsets: ["latin"], weight: "400" });
@@ -43,8 +44,20 @@ export default function Convite({
 }: ConviteProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const [isModalWhatsAppOpen, setIsModalWhatsAppOpen] = useState(false);
+
   const handleModalSubmit = (text: string) => {
     console.log("Mensagem enviada:", text);
+  };
+
+  const handleModalWhatsAppSubmit = (nome: string, quantidade: number) => {
+    const numero = "5531995745544";
+
+    const mensagem = `Olá! Sou ${nome} e confirmo minha presença no aniversário de 15 anos da Sofia Esther! Estarei com ${quantidade} pessoa(s).`;
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(url, "_blank");
   };
 
   return (
@@ -113,8 +126,7 @@ export default function Convite({
               <span className="text-[#8DA0D6] text-4xl mb-8">2025</span>
             </div>
 
-
-          <div className="relative w-full mt-2">
+            <div className="relative w-full mt-2">
               <Image
                 src="/flower.png"
                 alt="Foto para o grande dia"
@@ -122,8 +134,7 @@ export default function Convite({
                 height={100}
                 className="absolute left-[-20px] -top-30 rounded-2xl object-cover"
               />
-          </div>
-
+            </div>
 
             <div className="flex items-start justify-center text-[#4e5861] m-4">
               <div className="flex flex-col items-center">
@@ -133,7 +144,6 @@ export default function Convite({
               </div>
             </div>
           </div>
-          
 
           <div className="mt-6 w-full max-w-md">
             <MiniMapa endereco={endereco} />
@@ -142,45 +152,32 @@ export default function Convite({
           <div className="mt-15 mb-10 flex justify-center gap-6">
             <Button
               variant="primary"
-              onClick={() => {
-                const numero = "5531995745544";
-
-                const mensagem =
-                  "Olá! Quero confirmar minha presença no aniversário de 15 anos da Sofia Esther!";
-
-                const url = `https://wa.me/${numero}?text=${encodeURIComponent(
-                  mensagem
-                )}`;
-
-                window.open(url, "_blank");
-              }}
+              onClick={() => setIsModalWhatsAppOpen(true)}
             >
               CONFIRMAR PRESENÇA
             </Button>
           </div>
         </div>
 
-         <div className="relative w-full mt-2">
-              <Image
-                src="/seta3.png"
-                alt="Foto para o grande dia"
-                width={40}
-                height={40}
-                className="absolute right-6 -top-31 rounded-2xl object-cover"
-              />
+        <div className="relative w-full mt-2">
+          <Image
+            src="/seta3.png"
+            alt="Foto para o grande dia"
+            width={40}
+            height={40}
+            className="absolute right-6 -top-31 rounded-2xl object-cover"
+          />
         </div>
 
-         <div className="relative w-full mt-10">
-              <Image
-                src="/florazul22.png"
-                alt="Foto para o grande dia"
-                width={300}
-                height={300}
-                className="absolute mt-8 -top-30 left-1/2 -translate-x-1/2 rounded-2xl object-cover"
-              />
+        <div className="relative w-full mt-10">
+          <Image
+            src="/florazul22.png"
+            alt="Foto para o grande dia"
+            width={300}
+            height={300}
+            className="absolute mt-8 -top-30 left-1/2 -translate-x-1/2 rounded-2xl object-cover"
+          />
         </div>
-
-
 
         <div className="text-center mt-20">
           <span
@@ -191,10 +188,10 @@ export default function Convite({
         </div>
 
         <div className="text-left flex flex-col items-center pl-8 pr-8">
-         
           <p
             className={`${montserrat.className} mt-7 text-sm md:text-base tracking-wider text-[#4e5861] flex items-center gap-1`}
-          ><span className="text-[#3716bc]">🩵</span>
+          >
+            <span className="text-[#3716bc]">🩵</span>
             Confirme sua presença até o dia 25 de setembro.
           </p>
 
@@ -205,23 +202,21 @@ export default function Convite({
           </p>
         </div>
 
-
         <div className="text-center mt-20">
           <span
             className={`${greatVibes.className} text-center text-5xl tracking-wider text-[#1A237E]`}
           ></span>
         </div>
 
-   <div className="relative w-full mt-10">
-              <Image
-                src="/setaBaixo.png"
-                alt="Foto para o grande dia"
-                width={30}
-                height={30}
-                className="absolute mt-12 -top-25 left-1/2 -translate-x-1/2 rounded-2xl object-cover"
-              />
+        <div className="relative w-full mt-10">
+          <Image
+            src="/setaBaixo.png"
+            alt="Foto para o grande dia"
+            width={30}
+            height={30}
+            className="absolute mt-12 -top-25 left-1/2 -translate-x-1/2 rounded-2xl object-cover"
+          />
         </div>
-
 
         <div className="text-center mt-20">
           <Button variant="primary" onClick={() => setIsModalOpen(true)}>
@@ -233,6 +228,12 @@ export default function Convite({
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           onSubmit={handleModalSubmit}
+        />
+
+        <ModalWhatsapp
+          isOpen={isModalWhatsAppOpen}
+          onClose={() => setIsModalWhatsAppOpen(false)}
+          onSubmit={handleModalWhatsAppSubmit}
         />
 
         <div className="relative w-full mt-10">
